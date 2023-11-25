@@ -1,0 +1,94 @@
+<!-- student.component.html -->
+
+<nav class="navbar navbar-light bg-primary p-2">
+    <h4 class="text-light">Test CRUD</h4>
+    <div class="d-flex">
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
+    </div>
+</nav>
+
+<div class="container">
+    <table class="table table-striped text-center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Hobby</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of studentData">
+                <td>{{row.id}}</td>
+                <td>{{row.firstName}}</td>
+                <td>{{row.lastName}}</td>
+                <td>{{row.gender}}</td>
+                <td>{{ row.hobby.join(', ') }}</td>
+                <!-- <td>
+                    <span *ngFor="let hobby of row.hobby">{{hobby}} </span>
+                </td> -->
+                <td>
+                    <button class="btn btn-warning mx-1" (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+                    <button class="btn btn-danger mx-1" (click)="deleteStudent(row)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Employee Form</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    <div class="mb-3">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" formControlName="firstName">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" formControlName="lastName">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Gender</label><br>
+                        <label class="form-check-label">
+                            <input type="radio" formControlName="gender" value="Male" class="form-check-input"> Male
+                        </label>
+                        <label class="form-check-label mx-2">
+                            <input type="radio" formControlName="gender" value="Female" class="form-check-input"> Female
+                        </label>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Hobby</label><br>
+                        <label class="form-check-label">
+                            <input type="checkbox" formControlName="hobby_reading" value="Reading" class="form-check-input"> Reading
+                        </label>
+                        <label class="form-check-label mx-2">
+                            <input type="checkbox" formControlName="hobby_gaming" value="Gaming" class="form-check-input"> Gaming
+                        </label>
+
+                        <label class="form-check-label mx-2">
+                            <input type="checkbox" formControlName="hobby_fishing" value="Fishing" class="form-check-input"> Fishing
+                        </label>
+
+                        <label class="form-check-label mx-2">
+                            <input type="checkbox" formControlName="hobby_sleeping" value="Fishing" class="form-check-input"> Sleeping
+                        </label>
+                        <!-- Add other hobby checkboxes as needed -->
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" (click)="save()">Save</button>
+                <button type="button" class="btn btn-primary" (click)="studentEdit()">Update</button>
+            </div>
+        </div>
+    </div>
+</div>

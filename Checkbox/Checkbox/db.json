@@ -1,0 +1,129 @@
+{
+  "student": [
+    {
+      "id": 25,
+      "firstName": "sabit",
+      "lastName": "hasan",
+      "gender": "Male",
+      "hobby": [
+        "Reading",
+        "Gaming"
+      ]
+    },
+    {
+      "id": 28,
+      "firstName": "sabit",
+      "lastName": "hasan",
+      "gender": "Male",
+      "hobby": [
+        "Reading",
+        "Gaming"
+      ]
+    },
+    {
+      "id": 29,
+      "firstName": "Tameem",
+      "lastName": "Hasan",
+      "gender": "Male",
+      "hobby": [
+        "Reading",
+        "Gaming"
+      ]
+    },
+    {
+      "id": 30,
+      "firstName": "nahid",
+      "lastName": "dfdf",
+      "gender": "Male",
+      "hobby": [
+        "Reading"
+      ]
+    },
+    {
+      "id": 31,
+      "firstName": "sabit",
+      "lastName": "hasan",
+      "gender": "Male",
+      "hobby": [
+        "Reading",
+        "Gaming"
+      ]
+    },
+    {
+      "id": 32,
+      "firstName": "sabit",
+      "lastName": "hasan",
+      "gender": "Male",
+      "hobby": [
+        "Reading"
+      ]
+    },
+    {
+      "id": 33,
+      "firstName": "sabit",
+      "lastName": "hasan",
+      "gender": "Male",
+      "hobby": [
+        "Reading",
+        "Gaming"
+      ]
+    },
+    {
+      "id": 34,
+      "firstName": "santo",
+      "lastName": "hasan",
+      "gender": "Male",
+      "hobby": [
+        "Fishing"
+      ]
+    },
+    {
+      "id": 35,
+      "firstName": "sabit",
+      "lastName": "hasan",
+      "gender": "Male",
+      "hobby": [
+        "Reading",
+        "Gaming"
+      ]
+    },
+    {
+      "id": 36,
+      "firstName": "sabit",
+      "lastName": "hasan",
+      "gender": "Male",
+      "hobby": [
+        "Reading",
+        "Gaming",
+        "Fishing"
+      ]
+    },
+    {
+      "id": 37,
+      "firstName": "sabit",
+      "lastName": "hasan",
+      "gender": "Male",
+      "hobby": [
+        "Fishing"
+      ]
+    },
+    {
+      "id": 38,
+      "firstName": "Jahir",
+      "lastName": "Sheikh",
+      "gender": "Male",
+      "hobby": [
+        "Reading"
+      ]
+    },
+    {
+      "id": 39,
+      "firstName": "sabit",
+      "lastName": "hasan",
+      "gender": "Male",
+      "hobby": [
+        "Sleeping"
+      ]
+    }
+  ]
+}
