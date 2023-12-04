@@ -1,0 +1,76 @@
+<nav class="navbar navbar-light bg-warning p-2">
+    <h4 class="text-light">Student Form</h4>
+    <div class="d-flex">
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Student</button>
+    </div>
+</nav>
+
+
+<div class="container">
+    <table class="table table-bordered table-striped text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>Roll</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Marks</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of studentData">
+                <td><b>{{ row.roll }}</b></td>
+                <td><b>{{ row.name }}</b></td>
+                <td><b>{{ row.department }}</b></td>
+                <td><b>{{ row.marks }}</b></td>
+                <td>
+                    <button class="btn btn-warning mx-1" (click)="onEdit(row)" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Edit</button>
+                    <button class="btn btn-danger mx-1" (click)="deleteStudent(row)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Student Form</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    <div class="mb-3">
+                        <label class="form-label">Roll</label>
+                        <input type="text" class="form-control" formControlName="roll">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" formControlName="name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Department</label>
+                        <select class="form-select" formControlName="department">
+                            <option value="" disabled selected>Select Department</option>
+                            <option value="JEE">JEE</option>
+                            <option value="DDD">DDD</option>
+                            <option value="WDPF">WDPF</option>
+                            <!-- Add other department options as needed -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Marks</label>
+                        <input type="text" class="form-control" formControlName="marks">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" (click)="save()">Save</button>
+                <button type="button" class="btn btn-primary" (click)="studentEdit()">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
