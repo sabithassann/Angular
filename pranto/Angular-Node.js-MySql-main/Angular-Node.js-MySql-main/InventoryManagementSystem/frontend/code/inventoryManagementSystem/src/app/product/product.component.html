@@ -1,0 +1,47 @@
+<div class="container">
+  <h2>Product Management</h2>
+
+  <form [formGroup]="productForm" (ngSubmit)="editProduct ? updateProduct() : addProduct()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name">
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="number" class="form-control" id="price" formControlName="price">
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input type="number" class="form-control" id="quantity" formControlName="quantity">
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{ editProduct ? 'Update' : 'Add' }} Product</button>
+    <button type="button" class="btn btn-secondary" (click)="cancelEdit()" *ngIf="editProduct">Cancel</button>
+  </form>
+
+  <hr>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="editProductDetails(product)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteProduct(product.id!)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
